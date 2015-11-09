@@ -1,0 +1,2 @@
+2015-11-09 18:58:40.800 Chess[11379:212691] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-09 18:58:40.800 Chess[11379:212691] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
