@@ -16,13 +16,13 @@ namespace Chess
 	public class AppController : Game
 	{
 		GraphicsDeviceManager graphics;
-		SpriteBatch spriteBatch;
 		GameModel model;
 		GameView view;
 
 		public AppController ()
 		{
 			graphics = new GraphicsDeviceManager (this);
+
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = false;	
 			model = new GameModel ();
@@ -37,6 +37,10 @@ namespace Chess
 		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
+			graphics.PreferredBackBufferWidth = 320;
+			graphics.PreferredBackBufferHeight = 240;
+			graphics.ApplyChanges();
+
 			base.Initialize ();
 				
 		}

@@ -12,7 +12,9 @@ namespace Chess
 {
 	class GameModel
 	{
-		
+		public GameModel() {
+			
+		}
 	}
 
 }

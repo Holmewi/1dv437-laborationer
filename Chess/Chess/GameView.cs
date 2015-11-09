@@ -36,6 +36,11 @@ namespace Chess
 		{
 			
 			spriteBatch.Begin();
+
+			Vector2 scale = camera.getScale(device);
+			//camera.setBorderSize ();
+			//camera.setSizeOfTile ();
+
 			// Draw white bricks
 			for (int x = 0; x < 8; x += 1) {
 				int a = 0;
@@ -44,7 +49,8 @@ namespace Chess
 				}
 					
 				for (int y = a; y < 8; y += 2) {
-					spriteBatch.Draw (chessTexture, camera.getVisualCoordinates(x, y), whiteBrick, Color.White);
+					spriteBatch.Draw (chessTexture, camera.getVisualCoordinates (x, y), whiteBrick, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+					//spriteBatch.Draw (chessTexture, camera.getVisualCoordinates(x, y), whiteBrick, Color.White);
 				}
 
 			}
@@ -56,12 +62,19 @@ namespace Chess
 				}
 
 				for (int y = a; y < 8; y += 2) {
-					spriteBatch.Draw (chessTexture, camera.getVisualCoordinates(x, y), blackBrick, Color.White);
+					spriteBatch.Draw (chessTexture, camera.getVisualCoordinates (x, y), blackBrick, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+					//spriteBatch.Draw (chessTexture, camera.getVisualCoordinates(x, y), blackBrick, Color.White);
 				}
 
 			}
 
-			spriteBatch.Draw (chessTexture, camera.getVisualCoordinates (2,3), piece, Color.White);
+
+
+			// Normal camera view
+			spriteBatch.Draw (chessTexture, camera.getVisualCoordinates (2,3), piece, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
+			// Rotaded camera view
+			spriteBatch.Draw (chessTexture, camera.getRotatedCameraView (2,3), piece, Color.White, 0, new Vector2(0,0), scale, SpriteEffects.None, 0);
 
 			spriteBatch.End ();
 		}
