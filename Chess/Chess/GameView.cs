@@ -61,6 +61,8 @@ namespace Chess
 
 			}
 
+			spriteBatch.Draw (chessTexture, camera.getVisualCoordinates (2,3), piece, Color.White);
+
 			spriteBatch.End ();
 		}
 	}
