@@ -21,25 +21,29 @@ namespace BallBox.View
 		Camera camera;
 
 
-		public BallView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device) 
+		public BallView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device, Camera camera) 
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
-			spriteBatch = new SpriteBatch (device);
-
-			ballTexture = content.Load<Texture2D> ("ball.png");
+			this.spriteBatch = new SpriteBatch (device);
+			this.ballTexture = content.Load<Texture2D> ("ball.png");
 
 			this.ballSimulation = ballSimulation;
-			camera = new Camera ();
+			this.camera = camera;
 		}
 
 		public void DrawBall(GraphicsDevice device) 
 		{
-			spriteBatch.Begin ();
+			// Sets the displacment to the center of the texture width and height
+			Vector2 ballTextureDisplacement = new Vector2 ((float)ballTexture.Bounds.Width / 2, (float)ballTexture.Bounds.Height / 2);
 
-			Vector2 ballPosition = new Vector2 (0,0);
-			spriteBatch.Draw (ballTexture, ballPosition, null);
+			// Sets the scale of the the texture to 0.1 independent on the resolution 
+			Vector2 scale = this.camera.getVisualBallScale (ballSimulation.getLogicBallRadius(), ballTexture.Bounds.Width, ballTexture.Bounds.Height);
 
-			spriteBatch.End ();
+			this.spriteBatch.Begin ();
+
+			this.spriteBatch.Draw (ballTexture, camera.getVisualCoordinates (0.5f,0.5f) - ballTextureDisplacement * scale, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
+			this.spriteBatch.End ();
 		}
 	}
 

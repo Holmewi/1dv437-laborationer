@@ -17,12 +17,12 @@ namespace BallBox.Controller
 	/// </summary>
 	public class MasterController : Game
 	{
-		GraphicsDeviceManager graphics;
+		GraphicsDeviceManager graphics; 
 
+		private Camera camera;
 		private BallSimulation ballSimulation;
 		private BallView ballView;
 		private BoxView boxView;
-
 
 		public MasterController ()
 		{
@@ -43,8 +43,8 @@ namespace BallBox.Controller
 		{
 			// TODO: Add your initialization logic here
 
-			graphics.PreferredBackBufferWidth = 500;
-			graphics.PreferredBackBufferHeight = 500;
+			graphics.PreferredBackBufferWidth = 1000;
+			graphics.PreferredBackBufferHeight = 1000;
 			graphics.ApplyChanges();
 
 			base.Initialize ();
@@ -58,8 +58,9 @@ namespace BallBox.Controller
 		protected override void LoadContent ()
 		{
 			//TODO: use this.Content to load your game content here
-			ballView = new BallView (ballSimulation, Content, GraphicsDevice);
-			boxView = new BoxView (ballSimulation, Content, GraphicsDevice);
+			camera = new Camera (GraphicsDevice);
+			ballView = new BallView (ballSimulation, Content, GraphicsDevice, camera);
+			boxView = new BoxView (ballSimulation, Content, GraphicsDevice, camera);
 		}
 
 		/// <summary>

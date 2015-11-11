@@ -14,12 +14,20 @@ namespace BallBox.Model
 	{
 		private float position;
 		private float speed;
-		private float radius;
+		private float radius = 0.05f;
 
 		public Ball() 
 		{
 			
 		}
+
+		public float Radius 
+		{
+			get { return this.radius; }
+			set { this.radius = value; }
+		}
+
+
 	}
 
 

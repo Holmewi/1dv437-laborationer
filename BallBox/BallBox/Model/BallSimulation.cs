@@ -18,7 +18,11 @@ namespace BallBox.Model
 		{
 			ball = new Ball ();
 		}
-	}
 
+		public float getLogicBallRadius() 
+		{
+			return ball.Radius;
+		}
+	}
 }
 

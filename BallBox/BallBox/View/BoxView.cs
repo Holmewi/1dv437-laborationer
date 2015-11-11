@@ -1,12 +1,12 @@
 #region Using Statements
 using System;
+using BallBox.Model;
 using BallBox.View;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.Input;
-using BallBox.Model;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
 
 #endregion
 
@@ -16,28 +16,27 @@ namespace BallBox.View
 	{
 		SpriteBatch spriteBatch;
 		BallSimulation ballSimulation;
-
+		Camera camera;
 		LineDrawer line;
 
-		private float boxMargin = 25;
 		private float boxTop;
 		private float boxBottom;
 		private float boxLeft;
 		private float boxRight;
 
-		public BoxView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device) 
+		public BoxView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device, Camera camera) 
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (device);
 
 			this.ballSimulation = ballSimulation;
-
+			this.camera = camera;
 			line = new LineDrawer (device);
 
-			this.boxTop = this.boxMargin;
-			this.boxBottom = device.Viewport.Height - this.boxMargin;
-			this.boxLeft = this.boxMargin;
-			this.boxRight = device.Viewport.Width - this.boxMargin;
+			this.boxTop = camera.getBoxMargin();
+			this.boxBottom = device.Viewport.Height - camera.getBoxMargin();
+			this.boxLeft = camera.getBoxMargin();
+			this.boxRight = device.Viewport.Width - camera.getBoxMargin();
 		}
 
 		public void DrawBox() 
