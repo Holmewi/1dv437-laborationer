@@ -41,7 +41,9 @@ namespace BallBox.View
 
 			this.spriteBatch.Begin ();
 
-			this.spriteBatch.Draw (ballTexture, camera.getVisualCoordinates (0.5f,0.5f) - ballTextureDisplacement * scale, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+			this.spriteBatch.Draw (ballTexture, camera.getVisualCoordinates (ballSimulation.getBallPositionX(), 
+									ballSimulation.getBallPositionY()) - ballTextureDisplacement * scale, 
+									null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
 			this.spriteBatch.End ();
 		}

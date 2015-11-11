@@ -12,8 +12,9 @@ namespace BallBox.Model
 {
 	class Ball
 	{
-		private float position;
-		private float speed;
+		private float positionX = 0.5f;
+		private float positionY = 0.5f;
+		private float speed = 0.25f;
 		private float radius = 0.05f;
 
 		public Ball() 
@@ -24,12 +25,23 @@ namespace BallBox.Model
 		public float Radius 
 		{
 			get { return this.radius; }
-			set { this.radius = value; }
 		}
 
+		public float PositionX
+		{
+			get { return this.positionX; }
+		}
 
+		public float PositionY
+		{
+			get { return this.positionY; }
+		}
+
+		public void Update(float timeElapsedSeconds) 
+		{
+			this.positionX = positionX + speed * timeElapsedSeconds;
+			this.positionY = positionY + speed * timeElapsedSeconds;
+		}
 	}
-
-
 }
 

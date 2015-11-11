@@ -78,7 +78,9 @@ namespace BallBox.Controller
 				Exit ();
 			}
 			#endif
-			// TODO: Add your update logic here			
+			// TODO: Add your update logic here
+			ballSimulation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
 			base.Update (gameTime);
 		}
 

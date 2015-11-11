@@ -19,11 +19,6 @@ namespace BallBox.View
 		Camera camera;
 		LineDrawer line;
 
-		private float boxTop;
-		private float boxBottom;
-		private float boxLeft;
-		private float boxRight;
-
 		public BoxView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device, Camera camera) 
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
@@ -33,20 +28,20 @@ namespace BallBox.View
 			this.camera = camera;
 			line = new LineDrawer (device);
 
-			this.boxTop = camera.getBoxMargin();
-			this.boxBottom = device.Viewport.Height - camera.getBoxMargin();
-			this.boxLeft = camera.getBoxMargin();
-			this.boxRight = device.Viewport.Width - camera.getBoxMargin();
+			ballSimulation.createBox (this.camera.getBoxMargin(), 
+										device.Viewport.Height - this.camera.getBoxMargin(), 
+										this.camera.getBoxMargin(), 
+										device.Viewport.Width - this.camera.getBoxMargin());
 		}
 
 		public void DrawBox() 
 		{
 			spriteBatch.Begin ();
 
-			Vector2 topLeftCornerPos = new Vector2 (this.boxTop, this.boxLeft);
-			Vector2 topRightCornerPos = new Vector2 (this.boxRight, this.boxTop);
-			Vector2 bottomLeftCornerPos = new Vector2 (this.boxLeft, this.boxBottom);
-			Vector2 bottomRightCornerPos = new Vector2 (this.boxBottom, this.boxRight);
+			Vector2 topLeftCornerPos = new Vector2 (ballSimulation.BoxTop, ballSimulation.BoxLeft);
+			Vector2 topRightCornerPos = new Vector2 (ballSimulation.BoxRight, ballSimulation.BoxTop);
+			Vector2 bottomLeftCornerPos = new Vector2 (ballSimulation.BoxLeft, ballSimulation.BoxBottom);
+			Vector2 bottomRightCornerPos = new Vector2 (ballSimulation.BoxBottom, ballSimulation.BoxRight);
 
 			line.DrawLine (spriteBatch, topLeftCornerPos, topRightCornerPos, Color.White);
 			line.DrawLine (spriteBatch, topRightCornerPos, bottomRightCornerPos, Color.White);

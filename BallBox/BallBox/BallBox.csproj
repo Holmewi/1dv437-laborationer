@@ -69,6 +69,7 @@
     <Compile Include="View\Camera.cs" />
     <Compile Include="Model\LineDrawer.cs" />
     <Compile Include="View\BoxView.cs" />
+    <Compile Include="Model\Box.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
