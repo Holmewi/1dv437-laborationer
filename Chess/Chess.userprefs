@@ -1,1 +1,16 @@
-﻿<Properties StartupItem="Chess/Chess.csproj" RefactoringSettings.EnableRefactorings="True" />
+﻿<Properties StartupItem="Chess/Chess.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chess/GameView.cs">
+    <Files>
+      <File FileName="Chess/AppController.cs" Line="22" Column="26" />
+      <File FileName="Chess/GameModel.cs" Line="16" Column="4" />
+      <File FileName="Chess/GameView.cs" Line="39" Column="4" />
+      <File FileName="Chess/Camera.cs" Line="40" Column="21" />
+      <File FileName="Chess/Main.cs" Line="43" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

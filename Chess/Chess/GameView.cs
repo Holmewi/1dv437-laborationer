@@ -38,8 +38,6 @@ namespace Chess
 			spriteBatch.Begin();
 
 			Vector2 scale = camera.getScale(device);
-			//camera.setBorderSize ();
-			//camera.setSizeOfTile ();
 
 			// Draw white bricks
 			for (int x = 0; x < 8; x += 1) {
