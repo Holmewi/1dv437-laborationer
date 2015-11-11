@@ -18,10 +18,11 @@ namespace BallBox.Controller
 	public class MasterController : Game
 	{
 		GraphicsDeviceManager graphics;
-		SpriteBatch spriteBatch;
 
-		BallSimulation ballSimulation;
-		BallView ballView;
+		private BallSimulation ballSimulation;
+		private BallView ballView;
+		private BoxView boxView;
+
 
 		public MasterController ()
 		{
@@ -41,6 +42,7 @@ namespace BallBox.Controller
 		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
+
 			graphics.PreferredBackBufferWidth = 500;
 			graphics.PreferredBackBufferHeight = 500;
 			graphics.ApplyChanges();
@@ -55,11 +57,9 @@ namespace BallBox.Controller
 		/// </summary>
 		protected override void LoadContent ()
 		{
-			// Create a new SpriteBatch, which can be used to draw textures.
-			spriteBatch = new SpriteBatch (GraphicsDevice);
-
 			//TODO: use this.Content to load your game content here
-			ballView = new BallView ();
+			ballView = new BallView (ballSimulation, Content, GraphicsDevice);
+			boxView = new BoxView (ballSimulation, Content, GraphicsDevice);
 		}
 
 		/// <summary>
@@ -87,10 +87,11 @@ namespace BallBox.Controller
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear (Color.ForestGreen);
 		
 			//TODO: Add your drawing code here
-            
+			ballView.DrawBall (GraphicsDevice);
+			boxView.DrawBox ();
 			base.Draw (gameTime);
 		}
 	}

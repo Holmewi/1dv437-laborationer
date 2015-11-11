@@ -12,7 +12,7 @@ namespace BallBox.Model
 {
 	class BallSimulation
 	{
-		Ball ball;
+		private Ball ball;
 
 		public BallSimulation() 
 		{
