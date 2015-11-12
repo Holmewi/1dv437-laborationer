@@ -19,7 +19,7 @@ namespace BallBox.Model
 
 		public Box()
 		{
-			
+
 		}
 
 		public float Top

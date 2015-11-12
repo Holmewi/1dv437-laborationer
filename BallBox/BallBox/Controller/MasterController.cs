@@ -18,8 +18,8 @@ namespace BallBox.Controller
 	{
 		GraphicsDeviceManager graphics; 
 
-		private Camera camera;
 		private BallSimulation ballSimulation;
+		private Camera camera;
 		private BallView ballView;
 		private BoxView boxView;
 
@@ -29,7 +29,7 @@ namespace BallBox.Controller
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = false;
 
-			ballSimulation = new BallSimulation ();
+			this.ballSimulation = new BallSimulation ();
 		}
 
 		/// <summary>
@@ -42,7 +42,7 @@ namespace BallBox.Controller
 		{
 			// TODO: Add your initialization logic here
 
-			graphics.PreferredBackBufferWidth = 500;
+			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 500;
 			graphics.ApplyChanges();
 
@@ -57,9 +57,9 @@ namespace BallBox.Controller
 		protected override void LoadContent ()
 		{
 			//TODO: use this.Content to load your game content here
-			camera = new Camera (GraphicsDevice);
-			ballView = new BallView (ballSimulation, Content, GraphicsDevice, camera);
-			boxView = new BoxView (ballSimulation, Content, GraphicsDevice, camera);
+			this.camera = new Camera (GraphicsDevice);
+			this.ballView = new BallView (ballSimulation, Content, GraphicsDevice, camera);
+			this.boxView = new BoxView (ballSimulation, Content, GraphicsDevice, camera);
 		}
 
 		/// <summary>
@@ -77,8 +77,9 @@ namespace BallBox.Controller
 				Exit ();
 			}
 			#endif
+
 			// TODO: Add your update logic here
-			ballSimulation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+			this.ballSimulation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
 			base.Update (gameTime);
 		}
@@ -92,8 +93,8 @@ namespace BallBox.Controller
 			graphics.GraphicsDevice.Clear (Color.ForestGreen);
 		
 			//TODO: Add your drawing code here
-			ballView.DrawBall (GraphicsDevice);
-			boxView.DrawBox ();
+			this.ballView.DrawBall ();
+			this.boxView.DrawBox ();
 			base.Draw (gameTime);
 		}
 	}

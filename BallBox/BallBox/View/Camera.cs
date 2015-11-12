@@ -14,26 +14,29 @@ namespace BallBox.View
 	{
 		private float boxMargin = 25;
 		private float sizeOfBox;
-
-		private int windowHeight;
-		private int windowWidth;
+		private float boxWindowDisplacementX;
+		private float boxWindowDisplacementY;
 
 		public Camera(GraphicsDevice device) 
 		{
-			this.windowHeight = device.Viewport.Height;
-			this.windowWidth = device.Viewport.Width;
+			int windowWidth = device.Viewport.Width;
+			int windowHeight = device.Viewport.Height;
 
-			if (this.windowWidth > this.windowHeight) {
-				this.sizeOfBox = (float)this.windowHeight - this.boxMargin * 2;
+			if (windowWidth > windowHeight) {
+				this.sizeOfBox = (float)windowHeight - this.boxMargin * 2;
+				this.boxWindowDisplacementX = (float)(windowWidth / 2) - ((this.sizeOfBox / 2) + this.boxMargin);
+				this.boxWindowDisplacementY = 0;
 			} else {
-				this.sizeOfBox = (float)this.windowWidth - this.boxMargin * 2;
+				this.sizeOfBox = (float)windowWidth - this.boxMargin * 2;
+				this.boxWindowDisplacementX = 0;
+				this.boxWindowDisplacementY = (float)(windowHeight / 2) - (this.sizeOfBox / 2 + this.boxMargin);
 			}
 		}
 
 		public Vector2 getVisualCoordinates(float logicX, float logicY)
 		{
-			float visualX = this.sizeOfBox * logicX + this.boxMargin;
-			float visualY = this.sizeOfBox * logicY + this.boxMargin;
+			float visualX = this.sizeOfBox * logicX + this.boxMargin + this.boxWindowDisplacementX;
+			float visualY = this.sizeOfBox * logicY + this.boxMargin + this.boxWindowDisplacementY;
 			return new Vector2(visualX, visualY);
 		}
 
@@ -45,17 +48,13 @@ namespace BallBox.View
 			return new Vector2(ballScaleX, ballScaleY);
 		}
 
-		public float getBoxSize() 
-		{
-			return this.sizeOfBox;
-		}
+		public float BoxSize { get { return this.sizeOfBox; } }
 
-		public float getBoxMargin() 
-		{
-			return this.boxMargin;
-		}
+		public float BoxMargin { get { return this.boxMargin; } }
+
+		public float BoxWindowDisplacementX { get { return this.boxWindowDisplacementX; } }
+
+		public float BoxWindowDisplacementY { get { return this.boxWindowDisplacementY; } }
 	}
-
-
 }
 

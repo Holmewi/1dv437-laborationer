@@ -41,8 +41,8 @@ namespace BallBox.Model
 
 		public void Update(float timeElapsedSeconds) 
 		{
-			this.positionX = positionX + speedX * timeElapsedSeconds;
-			this.positionY = positionY + speedY * timeElapsedSeconds;
+			this.positionX = this.positionX + this.speedX * timeElapsedSeconds;
+			this.positionY = this.positionY + this.speedY * timeElapsedSeconds;
 		}
 	}
 }

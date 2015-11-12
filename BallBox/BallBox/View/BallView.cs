@@ -17,8 +17,8 @@ namespace BallBox.View
 		SpriteBatch spriteBatch;
 		Texture2D ballTexture;
 
-		BallSimulation ballSimulation;
-		Camera camera;
+		private BallSimulation ballSimulation;
+		private Camera camera;
 
 
 		public BallView(BallSimulation ballSimulation, ContentManager content, GraphicsDevice device, Camera camera) 
@@ -31,18 +31,21 @@ namespace BallBox.View
 			this.camera = camera;
 		}
 
-		public void DrawBall(GraphicsDevice device) 
+		public void DrawBall() 
 		{
-			// Sets the displacment to the center of the texture width and height
-			Vector2 ballTextureDisplacement = new Vector2 ((float)ballTexture.Bounds.Width / 2, (float)ballTexture.Bounds.Height / 2);
+			int ballTextureWidth = ballTexture.Bounds.Width;
+			int ballTextureHeight = ballTexture.Bounds.Height;
 
-			// Sets the scale of the the texture to 0.1 independent on the resolution 
-			Vector2 scale = this.camera.getVisualBallScale (ballSimulation.getLogicBallRadius(), ballTexture.Bounds.Width, ballTexture.Bounds.Height);
+			// Sets the displacment to the center of the texture width and height
+			Vector2 ballTextureDisplacement = new Vector2 ((float)ballTextureWidth / 2, (float)ballTextureHeight / 2);
+
+			// Sets the scale of the the texture to 0.1 independently of the resolution 
+			Vector2 scale = this.camera.getVisualBallScale (this.ballSimulation.Ball.Radius, ballTextureWidth, ballTextureHeight);
 
 			this.spriteBatch.Begin ();
 
-			this.spriteBatch.Draw (ballTexture, camera.getVisualCoordinates (ballSimulation.getBallPositionX(), 
-									ballSimulation.getBallPositionY()) - ballTextureDisplacement * scale, 
+			this.spriteBatch.Draw (ballTexture, this.camera.getVisualCoordinates (this.ballSimulation.Ball.PositionX, 
+									this.ballSimulation.Ball.PositionY) - ballTextureDisplacement * scale, 
 									null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
 			this.spriteBatch.End ();
