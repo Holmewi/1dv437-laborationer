@@ -1,2 +1,2 @@
-2015-11-12 00:27:53.579 BallBox[4492:230611] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
-2015-11-12 00:27:53.579 BallBox[4492:230611] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-12 02:33:38.882 BallBox[4965:265596] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-12 02:33:38.883 BallBox[4965:265596] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable

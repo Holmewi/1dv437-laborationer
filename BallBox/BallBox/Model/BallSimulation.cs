@@ -21,13 +21,50 @@ namespace BallBox.Model
 			box = new Box ();
 		}
 
-		public void boxCollider()
+		public void setCollisionY()
+		{	
+			// Ball hit top or bottom
+			if (ball.SpeedX > 0.0f && ball.SpeedY > 0.0f) {
+				ball.SpeedY = -0.25f;
+			}
+			else if (ball.SpeedX > 0.0f && ball.SpeedY < 0.0f) {
+				ball.SpeedY = 0.25f;
+			}
+			else if (ball.SpeedX < 0.0f && ball.SpeedY < 0.0f) {
+				ball.SpeedY = 0.25f;
+			}
+			else if (ball.SpeedX < 0.0f && ball.SpeedY > 0.0f) {
+				ball.SpeedY = -0.25f;
+			}
+		}
+
+		public void setCollisionX()
 		{
-			
+			// Ball hit left or right
+			if (ball.SpeedX > 0 && ball.SpeedY > 0) {
+				ball.SpeedX = -0.25f;
+			}
+			else if (ball.SpeedX > 0 && ball.SpeedY < 0) {
+				ball.SpeedX = -0.25f;
+			}
+			else if (ball.SpeedX < 0 && ball.SpeedY < 0) {
+				ball.SpeedX = 0.25f;
+			}
+			else if (ball.SpeedX < 0 && ball.SpeedY > 0) {
+				ball.SpeedX = 0.25f;
+			}
 		}
 
 		public void Update(float seconds)
 		{
+			if (ball.PositionY + ball.Radius >= 1.0f || ball.PositionY - ball.Radius <= 0.0f) {
+				this.setCollisionY ();
+			}
+
+			else if (ball.PositionX + ball.Radius >= 1.0f || ball.PositionX - ball.Radius <= 0.0f) {
+				setCollisionX ();
+			}
+
 			ball.Update (seconds);
 		}
 

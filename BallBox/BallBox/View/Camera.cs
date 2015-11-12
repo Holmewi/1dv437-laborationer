@@ -15,8 +15,8 @@ namespace BallBox.View
 		private float boxMargin = 25;
 		private float sizeOfBox;
 
-		private float windowHeight;
-		private float windowWidth;
+		private int windowHeight;
+		private int windowWidth;
 
 		public Camera(GraphicsDevice device) 
 		{

@@ -28,10 +28,11 @@ namespace BallBox.View
 			this.camera = camera;
 			line = new LineDrawer (device);
 
+			// Top, bottom, left, right
 			ballSimulation.createBox (this.camera.getBoxMargin(), 
-										device.Viewport.Height - this.camera.getBoxMargin(), 
+				this.camera.getBoxSize() + this.camera.getBoxMargin(), 
 										this.camera.getBoxMargin(), 
-										device.Viewport.Width - this.camera.getBoxMargin());
+										this.camera.getBoxSize() + this.camera.getBoxMargin());
 		}
 
 		public void DrawBox() 

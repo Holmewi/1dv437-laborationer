@@ -2,7 +2,6 @@
 using System;
 using BallBox.Model;
 using BallBox.View;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -43,8 +42,8 @@ namespace BallBox.Controller
 		{
 			// TODO: Add your initialization logic here
 
-			graphics.PreferredBackBufferWidth = 1000;
-			graphics.PreferredBackBufferHeight = 1000;
+			graphics.PreferredBackBufferWidth = 500;
+			graphics.PreferredBackBufferHeight = 500;
 			graphics.ApplyChanges();
 
 			base.Initialize ();
