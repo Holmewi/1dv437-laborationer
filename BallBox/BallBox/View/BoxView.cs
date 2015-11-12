@@ -17,7 +17,6 @@ namespace BallBox.View
 		SpriteBatch spriteBatch;
 
 		private BallSimulation ballSimulation;
-		private GraphicsDevice device;
 		private Camera camera;
 		private LineDrawer line;
 
@@ -27,7 +26,6 @@ namespace BallBox.View
 			spriteBatch = new SpriteBatch (device);
 
 			this.ballSimulation = ballSimulation;
-			this.device = device;
 			this.camera = camera;
 			this.line = new LineDrawer (device);
 

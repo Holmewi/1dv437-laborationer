@@ -23,10 +23,15 @@ namespace BallBox.Model
 
 		public void Update(float seconds)
 		{
+			// Why is the ball position reach above 1.0f when hitting the bottom?
+			Console.WriteLine (this.ball.PositionY + this.ball.Radius);
+
+			// Ball hit top or bottom
 			if (this.ball.PositionY + this.ball.Radius >= 1.0f || this.ball.PositionY - this.ball.Radius <= 0.0f) {
 				this.setCollisionY ();
 			}
 
+			// Ball hit left or right
 			else if (this.ball.PositionX + this.ball.Radius >= 1.0f || this.ball.PositionX - this.ball.Radius <= 0.0f) {
 				setCollisionX ();
 			}
@@ -36,35 +41,41 @@ namespace BallBox.Model
 
 		public void setCollisionY()
 		{	
-			// Ball hit top or bottom
-			if (this.ball.SpeedX > 0.0f && this.ball.SpeedY > 0.0f) {
-				this.ball.SpeedY = -0.25f;
+			// Ball move towards bottom right
+			if (this.ball.SpeedX > 0 && this.ball.SpeedY > 0) {
+				this.ball.SpeedY = -0.5f;
 			}
-			else if (this.ball.SpeedX > 0.0f && this.ball.SpeedY < 0.0f) {
-				this.ball.SpeedY = 0.25f;
+			// Ball move towards top right
+			else if (this.ball.SpeedX > 0 && this.ball.SpeedY < 0) {
+				this.ball.SpeedY = 0.5f;
 			}
-			else if (this.ball.SpeedX < 0.0f && this.ball.SpeedY < 0.0f) {
-				this.ball.SpeedY = 0.25f;
+			// Ball move towards top left
+			else if (this.ball.SpeedX < 0 && this.ball.SpeedY < 0) {
+				this.ball.SpeedY = 0.5f;
 			}
-			else if (this.ball.SpeedX < 0.0f && this.ball.SpeedY > 0.0f) {
-				this.ball.SpeedY = -0.25f;
+			// Ball move towards bottom left
+			else if (this.ball.SpeedX < 0 && this.ball.SpeedY > 0) {
+				this.ball.SpeedY = -0.5f;
 			}
 		}
 
 		public void setCollisionX()
 		{
-			// Ball hit left or right
+			// Ball move towards bottom right
 			if (this.ball.SpeedX > 0 && this.ball.SpeedY > 0) {
-				this.ball.SpeedX = -0.25f;
+				this.ball.SpeedX = -0.5f;
 			}
+			// Ball move towards top right
 			else if (ball.SpeedX > 0 && this.ball.SpeedY < 0) {
-				this.ball.SpeedX = -0.25f;
+				this.ball.SpeedX = -0.5f;
 			}
+			// Ball move towards top left
 			else if (this.ball.SpeedX < 0 && this.ball.SpeedY < 0) {
-				this.ball.SpeedX = 0.25f;
+				this.ball.SpeedX = 0.5f;
 			}
+			// Ball move towards bottom left
 			else if (this.ball.SpeedX < 0 && this.ball.SpeedY > 0) {
-				this.ball.SpeedX = 0.25f;
+				this.ball.SpeedX = 0.5f;
 			}
 		}
 

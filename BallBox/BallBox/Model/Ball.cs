@@ -14,9 +14,9 @@ namespace BallBox.Model
 	{
 		private float radius = 0.05f;
 		private float positionX = 0.2f;
-		private float positionY = 0.7f;
-		private float speedX = 0.25f;
-		private float speedY = 0.25f;
+		private float positionY = 0.9f;
+		private float speedX = 0.5f;
+		private float speedY = 0.5f;
 
 		public Ball() 
 		{

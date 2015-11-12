@@ -79,6 +79,8 @@ namespace BallBox.Controller
 			#endif
 
 			// TODO: Add your update logic here
+			//this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 1000.0f);
+
 			this.ballSimulation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
 			base.Update (gameTime);
