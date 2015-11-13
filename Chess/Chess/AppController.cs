@@ -37,8 +37,8 @@ namespace Chess
 		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
-			graphics.PreferredBackBufferWidth = 320;
-			graphics.PreferredBackBufferHeight = 240;
+			graphics.PreferredBackBufferWidth = 500;
+			graphics.PreferredBackBufferHeight = 500;
 			graphics.ApplyChanges();
 
 			base.Initialize ();

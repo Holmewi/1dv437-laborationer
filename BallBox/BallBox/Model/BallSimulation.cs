@@ -26,14 +26,28 @@ namespace BallBox.Model
 			// Why is the ball position reach above 1.0f when hitting the bottom?
 			Console.WriteLine (this.ball.PositionY + this.ball.Radius);
 
-			// Ball hit top or bottom
-			if (this.ball.PositionY + this.ball.Radius >= 1.0f || this.ball.PositionY - this.ball.Radius <= 0.0f) {
+			// Ball hit top
+			if (this.ball.PositionY - this.ball.Radius <= 0.0f) {
 				this.setCollisionY ();
+				this.ball.PositionY = 0.0f + this.ball.Radius;
 			}
 
-			// Ball hit left or right
-			else if (this.ball.PositionX + this.ball.Radius >= 1.0f || this.ball.PositionX - this.ball.Radius <= 0.0f) {
+			// Ball hit bottom
+			else if (this.ball.PositionY + this.ball.Radius >= 1.0f) {
+				this.setCollisionY ();
+				this.ball.PositionY = 1.0f - this.ball.Radius;
+			}
+
+			// Ball hit left
+			else if (this.ball.PositionX - this.ball.Radius <= 0.0f) {
 				setCollisionX ();
+				this.ball.PositionX = 0.0f + this.ball.Radius;
+			}
+
+			// Ball hit right
+			else if (this.ball.PositionX + this.ball.Radius >= 1.0f) {
+				setCollisionX ();
+				this.ball.PositionX = 1.0f - this.ball.Radius;
 			}
 
 			this.ball.Update (seconds);
@@ -43,19 +57,19 @@ namespace BallBox.Model
 		{	
 			// Ball move towards bottom right
 			if (this.ball.SpeedX > 0 && this.ball.SpeedY > 0) {
-				this.ball.SpeedY = -0.5f;
+				this.ball.SpeedY = -0.9f;
 			}
 			// Ball move towards top right
 			else if (this.ball.SpeedX > 0 && this.ball.SpeedY < 0) {
-				this.ball.SpeedY = 0.5f;
+				this.ball.SpeedY = 0.9f;
 			}
 			// Ball move towards top left
 			else if (this.ball.SpeedX < 0 && this.ball.SpeedY < 0) {
-				this.ball.SpeedY = 0.5f;
+				this.ball.SpeedY = 0.9f;
 			}
 			// Ball move towards bottom left
 			else if (this.ball.SpeedX < 0 && this.ball.SpeedY > 0) {
-				this.ball.SpeedY = -0.5f;
+				this.ball.SpeedY = -0.9f;
 			}
 		}
 

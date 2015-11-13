@@ -25,9 +25,15 @@ namespace BallBox.Model
 
 		public float Radius { get { return this.radius; } }
 
-		public float PositionX { get { return this.positionX; } }
+		public float PositionX { 
+			get { return this.positionX; } 
+			set { this.positionX = value; }
+		}
 
-		public float PositionY { get { return this.positionY; } }
+		public float PositionY { 
+			get { return this.positionY; }
+			set { this.positionY = value; }
+		}
 
 		public float SpeedX {
 			get { return this.speedX; }
