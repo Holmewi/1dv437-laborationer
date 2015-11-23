@@ -1,15 +1,15 @@
-﻿<Properties RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-13 07:43:35">
+﻿<Properties StartupItem="BallBox/BallBox.csproj" RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-13 07:43:35">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BallBox/Model/Box.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BallBox/View/BoxView.cs">
     <Files>
-      <File FileName="BallBox/Controller/MasterController.cs" Line="82" Column="28" />
-      <File FileName="BallBox/Model/BallSimulation.cs" Line="42" Column="22" />
-      <File FileName="BallBox/Model/Ball.cs" Line="19" Column="23" />
+      <File FileName="BallBox/Controller/MasterController.cs" Line="84" Column="62" />
+      <File FileName="BallBox/Model/BallSimulation.cs" Line="32" Column="24" />
+      <File FileName="BallBox/Model/Ball.cs" Line="34" Column="23" />
       <File FileName="BallBox/View/BallView.cs" Line="46" Column="4" />
       <File FileName="BallBox/View/BoxView.cs" Line="20" Column="25" />
       <File FileName="BallBox/Model/Box.cs" Line="22" Column="4" />
       <File FileName="BallBox/View/Camera.cs" Line="35" Column="3" />
-      <File FileName="BallBox/Main.cs" Line="31" Column="45" />
+      <File FileName="BallBox/Main.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
