@@ -14,37 +14,40 @@ namespace SmokeAndInterpolation.Model
 {
 	public class SmokeParticle
 	{
-		private float maxSpeed = 0.3f;
+		private Random random;
 
-		private Vector2 randomDirection;
-		private Vector2 startRandomDirection;
-		private Vector2 position = new Vector2(0, 0.45f);
-		private Vector2 acceleration = new Vector2(0, -1.8f);
+		private Vector2 startPosition = new Vector2(0, 0.45f);
+		private Vector2 acceleration = new Vector2(0, -0.3f);
 
-		private float minSize = 0.02f; // 1.0f is the size of the sizeOfWindow in the Camera class.
-		private float currentSize;
+		private Vector2 velocity;
+		private Vector2 position;
+		private float size;
+		private float life;
+		private float lifePercent;
 
-		private float particleLife = 5.0f;
+		private const float MAX_LIFE = 5.0f;
+		private const float MAX_SPEED = 0.05f;
+		private const float MAX_SIZE = 0.3f;
+		private const float MIN_SIZE = 0.02f; // 1.0f is the size of the sizeOfWindow in the Camera class.
 
 		public SmokeParticle(Random random)
 		{
-			this.randomDirection = new Vector2((float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f);
-			//normalize to get it spherical vector with length 1.0
-			this.randomDirection.Normalize();
-			//add random length between 0 to maxSpeed
-			this.randomDirection = randomDirection * ( (float)random.NextDouble() * this.maxSpeed);
-			this.startRandomDirection = this.randomDirection;
+			this.random = random;
 		}
 
 		/**
-		 * Used to respawn the particle at starting values
+		 * Used to spawn and respawn the particle at it's starting values
 		 */
-		public void Respawn(int i) 
+		public void SpawnParticle() 
 		{
-			Console.WriteLine ("Respawn " + i);
-			this.position = new Vector2(0, 0.45f);
-			this.randomDirection = this.startRandomDirection;
-			this.particleLife = 5.0f;
+			this.position = this.startPosition;
+
+			this.velocity = new Vector2((float)this.random.NextDouble() - 0.5f, (float)this.random.NextDouble() - 0.5f);
+			this.velocity.Normalize();
+			this.velocity = this.velocity * ((float)this.random.NextDouble() * MAX_SPEED);
+
+			this.life = MAX_LIFE;
+			this.size = MIN_SIZE;
 		}
 
 		public void Draw(Camera camera, Texture2D particlesmoke, SpriteBatch spriteBatch)
@@ -56,7 +59,7 @@ namespace SmokeAndInterpolation.Model
 			Vector2 smokeTextureCenterDisplacement = new Vector2 ((float)particleTextureWidth / 2, (float)particleTextureHeight / 2);
 
 			// Sets the scale of the the texture independently of the resolution 
-			Vector2 scale = camera.GetVisualParticleScale (particleTextureWidth, particleTextureHeight, this.minSize);
+			Vector2 scale = camera.GetVisualParticleScale (particleTextureWidth, particleTextureHeight, this.size);
 
 			spriteBatch.Draw (particlesmoke, camera.GetVisualCoordinates (this.position.X, this.position.Y) 
 				- smokeTextureCenterDisplacement * scale, 
@@ -66,13 +69,13 @@ namespace SmokeAndInterpolation.Model
 
 		public void Update(float elapsedTime)
 		{
-			this.particleLife -= elapsedTime;
+			this.life -= elapsedTime;
 
-			this.randomDirection = elapsedTime * this.acceleration + this.randomDirection;
-			this.position = elapsedTime * this.randomDirection + this.position;
+			this.velocity = elapsedTime * this.acceleration + this.velocity;
+			this.position = elapsedTime * this.velocity + this.position;
 		}
 
-		public float ParticleLife { get { return this.particleLife; } }
+		public float ParticleLife { get { return this.life; } }
 	}
 }
 

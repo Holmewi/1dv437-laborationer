@@ -23,12 +23,13 @@ namespace SmokeAndInterpolation.Model
 		private const int PARTICLE_LIFE_TIME = 5;
 
 		private float spawnTime = 0;
-
+		private Random random;
 
 		public SmokeSystem (ContentManager content, GraphicsDevice device, View.Camera camera)
 		{
 			this.particlesmoke = content.Load<Texture2D> ("particlesmoke.tga");
 			this.camera = camera;
+			this.random = new Random();
 		}
 
 		/**
@@ -37,8 +38,8 @@ namespace SmokeAndInterpolation.Model
 		private void Create()
 		{
 			if(this.smoke.Count < MAX_AMOUNT_PARTICLES) {	
-				Random random = new Random();
-				this.smoke.Add(new Model.SmokeParticle(random));
+				
+				this.smoke.Add(new Model.SmokeParticle(this.random));
 			}
 		}
 
@@ -63,8 +64,8 @@ namespace SmokeAndInterpolation.Model
 			{
 				this.smoke[i].Update (elapsedTime);
 
-				if (this.smoke [i].ParticleLife <= 0) {
-					this.smoke [i].Respawn (i);
+				if (this.smoke[i].ParticleLife <= 0) {
+					this.smoke[i].SpawnParticle ();
 				}
 			}
 		}
