@@ -19,7 +19,7 @@ namespace SmokeAndInterpolation.Model
 		private View.Camera camera;
 		private List<Model.SmokeParticle> smoke = new List<Model.SmokeParticle>();
 
-		private const int MAX_AMOUNT_PARTICLES = 200;
+		private const int MAX_AMOUNT_PARTICLES = 100;
 		private const int PARTICLE_LIFE_TIME = 5;
 
 		private float spawnTime = 0;
@@ -30,6 +30,7 @@ namespace SmokeAndInterpolation.Model
 			this.particlesmoke = content.Load<Texture2D> ("particlesmoke.tga");
 			this.camera = camera;
 			this.random = new Random();
+
 		}
 
 		/**
@@ -62,14 +63,13 @@ namespace SmokeAndInterpolation.Model
 
 			for (int i = 0; i < this.smoke.Count; i++) 
 			{
-				this.smoke[i].Update (elapsedTime);
-
-				if (this.smoke[i].ParticleLife <= 0) {
+				if (this.smoke[i].IsParticleDead()) {
 					this.smoke[i].SpawnParticle ();
 				}
+
+				this.smoke[i].Update (elapsedTime);
 			}
 		}
 	}
-
 }
 
