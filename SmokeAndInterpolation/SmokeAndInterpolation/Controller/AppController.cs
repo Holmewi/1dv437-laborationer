@@ -71,7 +71,7 @@ namespace SmokeAndInterpolation.Controller
 			}
 			#endif
 			// TODO: Add your update logic here
-			this.smokeSystem.Start();
+
 
 			this.smokeSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
