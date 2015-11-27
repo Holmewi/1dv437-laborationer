@@ -1,2 +1,2 @@
-2015-11-25 17:02:35.516 SmokeAndInterpolation[4190:552574] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
-2015-11-25 17:02:35.516 SmokeAndInterpolation[4190:552574] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-27 09:36:30.531 SmokeAndInterpolation[5171:718723] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-27 09:36:30.531 SmokeAndInterpolation[5171:718723] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable

@@ -1,11 +1,11 @@
-﻿<Properties StartupItem="SplitterAndGravitation/SplitterAndGravitation.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="SplitterAndGravitation/SplitterAndGravitation.csproj" RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-27 07:19:06">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SplitterAndGravitation/Model/SplitterParticle.cs">
     <Files>
-      <File FileName="SplitterAndGravitation/Controller/AppController.cs" Line="80" Column="22" />
-      <File FileName="SplitterAndGravitation/View/Camera.cs" Line="48" Column="69" />
-      <File FileName="SplitterAndGravitation/Model/SplitterSystem.cs" Line="29" Column="4" />
-      <File FileName="SplitterAndGravitation/Model/SplitterParticle.cs" Line="18" Column="34" />
+      <File FileName="SplitterAndGravitation/Controller/AppController.cs" Line="84" Column="14" />
+      <File FileName="SplitterAndGravitation/View/Camera.cs" Line="36" Column="50" />
+      <File FileName="SplitterAndGravitation/Model/SplitterSystem.cs" Line="41" Column="26" />
+      <File FileName="SplitterAndGravitation/Model/SplitterParticle.cs" Line="54" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

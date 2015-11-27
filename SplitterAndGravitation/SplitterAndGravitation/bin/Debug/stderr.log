@@ -1,2 +1,2 @@
-2015-11-24 00:16:22.496 SplitterAndGravitation[2289:292244] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
-2015-11-24 00:16:22.497 SplitterAndGravitation[2289:292244] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-27 09:31:41.880 SplitterAndGravitation[5162:717426] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-11-27 09:31:41.880 SplitterAndGravitation[5162:717426] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable

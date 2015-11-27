@@ -40,7 +40,7 @@ namespace SmokeAndInterpolation.Model
 		{
 			if(this.smoke.Count < MAX_AMOUNT_PARTICLES) {	
 				
-				this.smoke.Add(new Model.SmokeParticle(this.random));
+				this.smoke.Add(new Model.SmokeParticle(this.random, PARTICLE_LIFE_TIME));
 			}
 		}
 

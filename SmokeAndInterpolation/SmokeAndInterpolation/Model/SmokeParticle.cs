@@ -20,15 +20,16 @@ namespace SmokeAndInterpolation.Model
 		 * Values which is used when spawning a particle
 		 * @Vector2 startPosition and acceleration is the same for all particles
 		 * @float rotationSpeed gives a random value in the SpawnParticle method
+		 * @float maxLife is a constant from the SmokeSystem class
 		 */
 		private Vector2 startPosition = new Vector2(0, 0.45f);
 		private Vector2 acceleration = new Vector2(0, -0.1f);
 		private float rotationSpeed;
+		private float maxLife;
 
 		/**
 		 * Constant floats which are used to define constant varialbles
 		 */
-		private const float MAX_LIFE = 5.0f;
 		private const float MAX_SPEED = 0.05f;
 		private const float MAX_SIZE = 0.3f;
 		private const float MIN_SIZE = 0.02f;
@@ -50,9 +51,10 @@ namespace SmokeAndInterpolation.Model
 
 
 
-		public SmokeParticle(Random random)
+		public SmokeParticle(Random random, float maxLife)
 		{
 			this.random = random;
+			this.maxLife = maxLife;
 		}
 
 		/**
@@ -66,7 +68,7 @@ namespace SmokeAndInterpolation.Model
 			this.velocity.Normalize();
 			this.velocity = this.velocity * ((float)this.random.NextDouble() * MAX_SPEED);
 
-			this.life = MAX_LIFE;
+			this.life = this.maxLife;
 			this.timeLived = 0;
 			this.size = MIN_SIZE;
 			this.fade = 1.0f;
@@ -98,10 +100,10 @@ namespace SmokeAndInterpolation.Model
 			this.life -= elapsedTime;
 
 			this.timeLived += elapsedTime;
-			this.lifePercent = this.timeLived / MAX_LIFE;
+			this.lifePercent = this.timeLived / this.maxLife;
 			this.size = MIN_SIZE + this.lifePercent * MAX_SIZE;
 
-			this.fade -= elapsedTime / MAX_LIFE;
+			this.fade -= elapsedTime / this.maxLife;
 			this.rotation += elapsedTime * this.rotationSpeed;
 
 			this.velocity = elapsedTime * this.acceleration + this.velocity;

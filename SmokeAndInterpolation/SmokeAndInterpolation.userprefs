@@ -1,1 +1,15 @@
-﻿<Properties StartupItem="SmokeAndInterpolation/SmokeAndInterpolation.csproj" RefactoringSettings.EnableRefactorings="True" />
+﻿<Properties StartupItem="SmokeAndInterpolation/SmokeAndInterpolation.csproj" RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-27 08:36:13">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SmokeAndInterpolation/Model/SmokeSystem.cs">
+    <Files>
+      <File FileName="SmokeAndInterpolation/Controller/AppController.cs" Line="63" Column="18" />
+      <File FileName="SmokeAndInterpolation/View/Camera.cs" Line="44" Column="68" />
+      <File FileName="SmokeAndInterpolation/Model/SmokeSystem.cs" Line="66" Column="37" />
+      <File FileName="SmokeAndInterpolation/Model/SmokeParticle.cs" Line="64" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

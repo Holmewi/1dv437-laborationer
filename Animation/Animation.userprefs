@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="Animation/Animation.csproj" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-27 09:39:49" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Animation/AppController.cs">
+    <Files>
+      <File FileName="Animation/AppController.cs" Line="16" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
