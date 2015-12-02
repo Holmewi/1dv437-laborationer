@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Animation/Animation.csproj" MonoDevelop.MonoMac.LastXamMacNagTime="2015-11-27 09:39:49" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Animation/AppController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Animation/Controller/AppController.cs">
     <Files>
-      <File FileName="Animation/AppController.cs" Line="16" Column="28" />
+      <File FileName="Animation/Controller/AppController.cs" Line="101" Column="42" />
+      <File FileName="Animation/View/Camera.cs" Line="13" Column="21" />
+      <File FileName="Animation/View/ExplosionView.cs" Line="35" Column="180" />
+      <File FileName="Animation/Model/ExplosionSystem.cs" Line="23" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
