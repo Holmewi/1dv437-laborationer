@@ -60,6 +60,7 @@
     <Reference Include="OpenTK">
       <HintPath>..\packages\MonoGame.Framework.MacOS.3.3.0.0\lib\net45\OpenTK.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="View\GFX\SplashSystem.cs" />
     <Compile Include="View\GFX\Particles\DropParticle.cs" />
     <Compile Include="View\GFX\Particles\RainbowParticle.cs" />
+    <Compile Include="View\PointerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -90,10 +92,14 @@
     <Folder Include="Controller\" />
     <Folder Include="View\GFX\" />
     <Folder Include="View\GFX\Particles\" />
+    <Folder Include="Content\Texture\" />
+    <Folder Include="Content\Sound\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bubble.png" />
-    <Content Include="Content\burst.png" />
-    <Content Include="Content\rainbow.png" />
+    <Content Include="Content\Texture\bubble.png" />
+    <Content Include="Content\Texture\burst.png" />
+    <Content Include="Content\Texture\rainbow.png" />
+    <Content Include="Content\Sound\bubblepop.wav" />
+    <Content Include="Content\Texture\pointer.png" />
   </ItemGroup>
 </Project>

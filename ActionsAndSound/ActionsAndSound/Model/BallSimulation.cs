@@ -38,13 +38,6 @@ namespace ActionsAndSound.Model
 			this.ballSpawnTimer += elapsedTime;
 			this.ballSpawnTimerByClick += elapsedTime;
 
-			foreach(Model.Ball ball in this.ballList) {
-				this.CheckBoxCollision (ball);
-				ball.Position = elapsedTime * (ball.Velocity + ball.Collision) + ball.Position;
-				ball.CollisionX = 0;
-				ball.CollisionY = 0;
-			}
-				
 			int theball = 0;
 			while (this.ballList.Count > theball)
 			{
@@ -57,6 +50,13 @@ namespace ActionsAndSound.Model
 					otherBall++;
 				}
 				theball++;
+			}
+
+			foreach(Model.Ball ball in this.ballList) {
+				this.CheckBoxCollision (ball);
+				ball.Position = elapsedTime * ball.Velocity + ball.Position;
+				ball.CollisionX = 0;
+				ball.CollisionY = 0;
 			}
 		}
 

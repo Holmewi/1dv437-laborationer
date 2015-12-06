@@ -36,7 +36,7 @@ namespace ActionsAndSound.View
 			this.box.Right = device.Viewport.Width - this.camera.BoxMargin;
 		}
 
-		public void DrawBox(SpriteBatch spriteBatch) 
+		public void Draw(SpriteBatch spriteBatch) 
 		{
 			Vector2 topLeftCornerPos = new Vector2 (this.box.Left, this.box.Top);
 			Vector2 topRightCornerPos = new Vector2 (this.box.Right, this.box.Top);

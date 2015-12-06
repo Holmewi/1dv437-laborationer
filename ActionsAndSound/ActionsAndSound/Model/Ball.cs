@@ -28,8 +28,6 @@ namespace ActionsAndSound.Model
 			this.speed = (float)random.NextDouble () * (0.6f - 0.3f) + 0.3f;
 
 			this.position = position;
-			//this.position.X = (float)random.NextDouble () * (0.9f - 0.1f) + 0.1f;
-			//this.position.Y = (float)random.NextDouble () * (0.9f - 0.1f) + 0.1f;
 
 			this.velocity = new Vector2((float)random.NextDouble () - 0.5f, (float)random.NextDouble () - 0.5f);
 			this.velocity.Normalize ();

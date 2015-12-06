@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Audio;
 
 #endregion
 
@@ -18,6 +19,7 @@ namespace ActionsAndSound.View
 		private List<View.GFX.BurstSystem> burstList = new List<View.GFX.BurstSystem>();
 		private List<View.GFX.SplashSystem> splashList = new List<View.GFX.SplashSystem>();
 
+		private SoundEffect bubblePop;
 		private Texture2D ballTexture;
 		private Texture2D rainbowTexture;
 		private Texture2D burstSpriteSheet;
@@ -28,9 +30,10 @@ namespace ActionsAndSound.View
 
 		public BallView(ContentManager content, Model.BallSimulation ballSimulation, View.Camera camera) 
 		{
-			this.ballTexture = content.Load<Texture2D> ("bubble.png");
-			this.rainbowTexture = content.Load<Texture2D> ("rainbow.png");
-			this.burstSpriteSheet = content.Load<Texture2D> ("burst.png");
+			this.ballTexture = content.Load<Texture2D> ("Texture/bubble.png");
+			this.rainbowTexture = content.Load<Texture2D> ("Texture/rainbow.png");
+			this.burstSpriteSheet = content.Load<Texture2D> ("Texture/burst.png");
+			this.bubblePop = content.Load<SoundEffect>("Sound/bubblepop.wav");
 
 			this.ballSimulation = ballSimulation;
 			this.camera = camera;
@@ -40,6 +43,7 @@ namespace ActionsAndSound.View
 		{
 			this.burstList.Add(new View.GFX.BurstSystem (this.camera, position, radius, this.burstSpriteSheet));
 			this.splashList.Add(new View.GFX.SplashSystem (this.camera, position, this.ballTexture, this.rainbowTexture));
+			this.bubblePop.Play ();
 		}
 
 		public void Update(float elapsedTime)
@@ -65,7 +69,7 @@ namespace ActionsAndSound.View
 			}
 		}
 
-		public void DrawBall(SpriteBatch spriteBatch) 
+		public void Draw(SpriteBatch spriteBatch) 
 		{
 			foreach (View.GFX.BurstSystem burst in this.burstList) {
 				if (burst != null) {

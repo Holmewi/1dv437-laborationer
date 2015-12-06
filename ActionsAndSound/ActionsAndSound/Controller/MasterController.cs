@@ -22,12 +22,13 @@ namespace ActionsAndSound.Controller
 		private View.Camera camera;
 		private View.BallView ballView;
 		private View.BoxView boxView;
+		private View.PointerView pointerView;
 
 		public MasterController ()
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	            
-			graphics.IsFullScreen = true;
+			graphics.IsFullScreen = false;
 
 			this.ballSimulation = new Model.BallSimulation ();
 		}
@@ -41,7 +42,7 @@ namespace ActionsAndSound.Controller
 		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
-			this.IsMouseVisible = true;
+			this.IsMouseVisible = false;
 
 			graphics.PreferredBackBufferWidth = 1200;
 			graphics.PreferredBackBufferHeight = 700;
@@ -62,9 +63,9 @@ namespace ActionsAndSound.Controller
 
 			//TODO: use this.Content to load your game content here
 			this.camera = new View.Camera (GraphicsDevice);
-			this.ballView = new View.BallView (Content, ballSimulation, camera);
-			this.boxView = new View.BoxView (GraphicsDevice, camera);
-
+			this.ballView = new View.BallView (Content, ballSimulation, this.camera);
+			this.boxView = new View.BoxView (GraphicsDevice, this.camera);
+			this.pointerView = new View.PointerView (Content, this.camera);
 		}
 
 		/// <summary>
@@ -93,6 +94,7 @@ namespace ActionsAndSound.Controller
 			}
 			#endif
 			// TODO: Add your update logic here	
+			this.pointerView.Update(new Vector2(Mouse.GetState().X, Mouse.GetState().Y));
 			this.ballSimulation.Update(elapsedTime);
 			this.ballView.Update (elapsedTime);
 
@@ -109,8 +111,9 @@ namespace ActionsAndSound.Controller
 		
 			//TODO: Add your drawing code here
 			spriteBatch.Begin ();
-			this.boxView.DrawBox (spriteBatch);
-			this.ballView.DrawBall (spriteBatch);
+			this.boxView.Draw (spriteBatch);
+			this.ballView.Draw (spriteBatch);
+			this.pointerView.Draw (spriteBatch);
 			spriteBatch.End ();
 
 			base.Draw (gameTime);
