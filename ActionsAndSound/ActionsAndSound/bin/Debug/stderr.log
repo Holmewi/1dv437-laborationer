@@ -1,0 +1,2 @@
+2015-12-06 01:37:07.436 ActionsAndSound[19096:2376883] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-12-06 01:37:07.436 ActionsAndSound[19096:2376883] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable

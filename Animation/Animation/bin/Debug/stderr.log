@@ -1,2 +1,2 @@
-2015-11-27 15:58:19.919 Animation[5833:807780] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
-2015-11-27 15:58:19.919 Animation[5833:807780] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-12-04 10:11:09.093 Animation[15643:1991193] Failed to connect (colorGridView) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable
+2015-12-04 10:11:09.188 Animation[15643:1991193] Failed to connect (view) outlet from (NSApplication) to (NSColorPickerGridView): missing setter or instance variable

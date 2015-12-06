@@ -1,6 +1,33 @@
-﻿<Properties RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-12-01 16:54:17">
+﻿<Properties RefactoringSettings.EnableRefactorings="True" MonoDevelop.MonoMac.LastXamMacNagTime="2015-12-04 09:24:10" StartupItem="FireAndExplosion/FireAndExplosion.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FireAndExplosion/Model/ExplosionSystem.cs">
+    <Files>
+      <File FileName="FireAndExplosion/Controller/AppController.cs" Line="74" Column="13" />
+      <File FileName="FireAndExplosion/View/ExplosionView.cs" Line="50" Column="7" />
+      <File FileName="FireAndExplosion/Model/ExplosionSystem.cs" Line="99" Column="13" />
+      <File FileName="FireAndExplosion/Model/FireParticle.cs" Line="39" Column="25" />
+      <File FileName="FireAndExplosion/Model/SplitterParticle.cs" Line="1" Column="1" />
+      <File FileName="FireAndExplosion/Model/ShockwaveParticle.cs" Line="1" Column="1" />
+      <File FileName="FireAndExplosion/View/Camera.cs" Line="1" Column="1" />
+      <File FileName="FireAndExplosion/Model/Textures.cs" Line="1" Column="1" />
+      <File FileName="FireAndExplosion/Model/Particle.cs" Line="28" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FireAndExplosion" expanded="True">
+            <Node name="FireAndExplosion" expanded="True">
+              <Node name="Controller" expanded="True" />
+              <Node name="Model" expanded="True">
+                <Node name="ExplosionSystem.cs" selected="True" />
+              </Node>
+              <Node name="View" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

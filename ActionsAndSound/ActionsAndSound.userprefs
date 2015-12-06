@@ -1,0 +1,35 @@
+﻿<Properties StartupItem="ActionsAndSound/ActionsAndSound.csproj" MonoDevelop.MonoMac.LastXamMacNagTime="2015-12-04 14:58:03" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ActionsAndSound/Model/BallSimulation.cs">
+    <Files>
+      <File FileName="ActionsAndSound/Controller/MasterController.cs" Line="44" Column="40" />
+      <File FileName="ActionsAndSound/View/BallView.cs" Line="40" Column="64" />
+      <File FileName="ActionsAndSound/Model/BallSimulation.cs" Line="159" Column="60" />
+      <File FileName="ActionsAndSound/Model/Ball.cs" Line="15" Column="29" />
+      <File FileName="ActionsAndSound/Model/Box.cs" Line="4" Column="1" />
+      <File FileName="ActionsAndSound/View/BoxView.cs" Line="20" Column="18" />
+      <File FileName="ActionsAndSound/View/Camera.cs" Line="42" Column="48" />
+      <File FileName="ActionsAndSound/View/LineDrawer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ActionsAndSound" expanded="True">
+            <Node name="ActionsAndSound" expanded="True">
+              <Node name="Content" expanded="True" />
+              <Node name="Controller" expanded="True" />
+              <Node name="Model" expanded="True">
+                <Node name="BallSimulation.cs" selected="True" />
+              </Node>
+              <Node name="View" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
